@@ -43,14 +43,17 @@
               expand="block"
               color="secondary"
               class="ion-margin-top"
-              @click="mode = mode === AuthMode.SignIn ? AuthMode.SignUp : AuthMode.SignIn "
+              @click="
+                mode =
+                  mode === AuthMode.SignIn ? AuthMode.SignUp : AuthMode.SignIn
+              "
             >
               {{ mode === AuthMode.SignIn ? "Sign Up" : "Cancel" }}
             </ion-button>
           </form>
         </ion-card-content>
         <ion-card-content v-if="errorMsg" class="error-message">
-            {{errorMsg}}
+          {{ errorMsg }}
         </ion-card-content>
       </ion-card>
     </ion-content>
@@ -100,8 +103,9 @@ export default {
     IonButton,
     IonLabel,
     IonItem,
-    IonCardHeader
+    IonCardHeader,
   },
+
   setup() {
     const router = useRouter();
     const state = reactive({
